@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Proxy/Proxy.iml" filepath="$PROJECT_DIR$/Proxy/Proxy.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ProxyAfter/ProxyAfter.iml" filepath="$PROJECT_DIR$/ProxyAfter/ProxyAfter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringAOP/SpringAOP.iml" filepath="$PROJECT_DIR$/SpringAOP/SpringAOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/concurrency/concurrency.iml" filepath="$PROJECT_DIR$/concurrency/concurrency.iml" />
+      <module fileurl="file://$PROJECT_DIR$/netty-test/netty-test.iml" filepath="$PROJECT_DIR$/netty-test/netty-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test.iml" filepath="$PROJECT_DIR$/test.iml" />
+    </modules>
+  </component>
+</project>

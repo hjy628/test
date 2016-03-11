@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="cglib:cglib-full:2.0.2" type="repository">
+    <properties maven-id="cglib:cglib-full:2.0.2" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/cglib/cglib-full/2.0.2/cglib-full-2.0.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
