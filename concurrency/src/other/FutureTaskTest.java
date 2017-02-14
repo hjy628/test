@@ -1,3 +1,4 @@
+/*
 package other;
 
 import java.sql.Connection;
@@ -6,9 +7,11 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.FutureTask;
 
+*/
 /**
  * Created by hjy on 17-2-14.
- */
+ *//*
+
 public class FutureTaskTest {
 
     Map<String,Connection> connectionPool = new ConcurrentHashMap<String,Connection>();
@@ -35,3 +38,4 @@ public class FutureTaskTest {
     }
 
 }
+*/
