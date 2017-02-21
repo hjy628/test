@@ -1,0 +1,17 @@
+1,释放不必要的引用
+内存消耗严重的情况中最典型的一种情况是代码中持有了不需要的对象引用，造成这些对象无法被GC,从而占据了JVM堆内存,这种情况最典型的例子
+是在复用线程的情况下使用ThreadLocal，由于线程复用，ThreadLocal中存放的对象如未作主动释放的话则不会被GC
+ex:ThreadLocalDemo
+
+2,使用对象缓存池
+创建对象的实例要耗费一定的CPU及内存，适用对象缓存池一定程度上可降低JVM Heap内存的使用
+ex:ObjectPoolDemo
+
+3,采用合理的缓存失效算法
+太多对象放入缓存池，反而造成严重内存消耗，同时由于缓存池一直对这些对象持有引用，从而造成Full GC增多，需要合理控制缓存池的大小
+控制大小问题在于达到最大容量后，新加入的对象要如何处理，经典缓存失效算法：FIFO LRU LFU等
+java中可基于LinkedHashMap简单实现FIFO 和LRU 策略的CachePool
+ex:ObjectCachePool
+
+
+4,合理使用SoftReference 和 WeakReference
