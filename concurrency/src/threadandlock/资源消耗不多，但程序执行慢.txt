@@ -8,3 +8,23 @@ ex: LockHotDemo
 1,使用并发包中的类
 
 2,使用Treiber算法
+ex:ConcurrentStack
+ * Stack是LIFO方式，因此不能采取类似LinkedBlockingQueue中两把锁的机制，这里巧妙采用AtomicReference来实现了无阻塞的push和pop,
+ * 在push时基于AtomicReference的CAS方法来比较目前的head是否一致.
+ * 如果不一致，说明有其他线程改动了，如果有改动则继续循环，直到一致，才修改head元素，在pop时可采用同样的方式进行操作
+
+3,使用Micheal-Scott非阻塞队列算法
+和Treiber算法类似，Michael-Scott算法也是基于CAS以及AtomicReference来实现队列的非阻塞操作，java.util.concurrent
+中的ConcurrentLinkedQueue就是典型的基于Micheal-Scott实现的非阻塞队列.
+ConcurrentLinkedQueue在执行offer动作时，通过CAS比较拿到的tail元素是否为当前处于末尾的元素，如不是则继续循环，如是则将
+tail元素更新为较新的元素.
+在执行poll动作时，通过CAS比较拿到的head元素是否为当前处于首位的元素，如不是则继续循环，如是则将head后的元素赋值给head,同时获取之前head元素中的值并返回
+
+
+4,尽可能少用锁
+
+5,拆分锁
+拆分锁即把独占锁拆分为多把锁，常见的有读写锁拆分及类似ConcurrentHashMap中默认拆分为16把锁的方法
+
+6,去除读写操作的互斥锁
+在修改时枷锁，并复制对象进行修改，修改完毕后切换对象的引用，而读取时则不加锁，这种方式成为CopyOnWrite.
