@@ -22,6 +22,24 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
-#IDE
 *.iml
-*.project
+/*.ipr
+/*.iws
+/.classpath
+/.factorypath
+/.idea
+/.project
+/.settings
+/ibderby
+/nb*
+/release.properties
+/target
+/test.db.lck
+/test.db.log
+/test.db.properties
+/test.db.script
+/test.db.tmp
+/src/docbkx
+velocity.log
+/bin
+/derby.log
