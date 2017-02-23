@@ -1,0 +1,33 @@
+新生代可用的GC
+1,串行GC(Serial Copying)
+
+2,并行回收GC(Parallel Scavenge)
+
+3,并行GC(ParNew)
+和并行回收GC的区别在于须配合旧生代使用CMS GC,CMS GC在进行旧生代GC时，有些过程是并发进行的，如果此时发生Minor GC 需要进行相应的处理
+而并行回收GC是没有做这些处理的，也正因为这些特殊处理，ParNew GC 不可与并行的旧生代GC同时使用
+在配置为CMS GC 的情况下，新生代默认采用并行GC方式，也可通过-XX:+UseParNewGC来强制指定
+
+minorGC的触发
+Eden Space空间不足时minor GC的状况 ex:MinorGCDemo
+
+MinorGC时Survivor空间不足的情况下对象直接进入旧生代
+
+不同GC的日志
+
+
+
+
+
+旧生代可用的GC
+
+-XX:+PrintGCApplicationStoppedTime 查看GC造成的应用暂停的时间
+
+1,串行GC(Serial MSC)
+可通过-XX:+UseSerialGC来强制指定
+
+2,并行GC(Parallel MSC)
+可通过-XX:+UseParallelGC或-XX:+UseParallelOldGC来强制指定
+
+
+3,并发GC(CMS:Concurrent Mark-Sweep GC)

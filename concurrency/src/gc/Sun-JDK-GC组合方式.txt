@@ -1,0 +1,26 @@
+                                新生代GC方式                        旧生代和持久代GC方式
+-XX:+UseSerialGC                串行GC                                  串行GC
+
+-XX:+UseParallelGC              并行回收GC                               并行GC
+
+-XX:+UseConcMarkSweepGC         并行GC                                   并发GC 当出现Concurrent Mode failures时采用串行GC
+
+-XX:+UseParNewGC                并行GC                                   串行GC
+
+-XX:+UseParallelOldGC           并行回收GC                                 并行GC
+
+-XX:+UseConcMarkSweepGC
+-XX:-UseParNewGC                 串行GC                                   并发GC 当出现Concurrent Mode failures时采用串行GC
+
+
+
+不支持的组合方式                1:-XX:+UseParNewGC  -XX:+UseParallelOldGC    2:-XX:+UseParNewGC   -XX:+UseSerialGC
+
+
+
+
+
+两种简单方式：
+1,吞吐量优先, -XX:GCTimeRatio=n来使用此策略
+
+2,暂停时间优先, -XX:MaxGCPauseMillis=n来使用此策略

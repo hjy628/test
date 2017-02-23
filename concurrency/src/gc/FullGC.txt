@@ -1,0 +1,33 @@
+除了CMS GC 外，当旧生代和持久代触发GC时，其实是对新生代、旧生代和持久代都进行GC,因此通常又称为Full GC
+当Full GC被触发时，首先按照新生代所配置的GC方式堆新生代进行GC(在新生代采用PS GC时，可通过-XX:-ScavengeBegoreFullGC来禁止Full GC时对新生代进行GC)
+然后按照旧生代的GC方式对旧生代、持久代进行GC。但其中有一种特殊现象，如在进行Minor GC前，可能Minor GC后移到旧生代的对象多于旧生代的剩余空间
+这种情况下Minor GC就不会执行了，而是直接采用旧生代的GC方式来对新生代、旧生代及持久代进行回收
+
+除直接调用System.gc()外，触发Full GC执行的情况有如下四种
+
+1,旧生代空间不足
+旧生代只有在新生代对象传入及创建为大队箱，大数组时才会出现不足的现象，当执行FUll GC后空间仍然不足，则OOM:
+java.lang.OutOfMemoryError:Java heap space
+为避免以上两种状况引起的Full GC,调优时应尽量做到让对象在Minor GC阶段被回收，让对象在新生代多存活一段时间及不要创建过大的对象及数组
+
+ex:TestFullGC
+
+2,Permanet Generation空间满
+Permanet Generation中存放的为一些class的信息等，当系统中要加载的类、反射的类和调用的方法比较多时，Permanet Generation可能会被占满
+在未配置为采用CMS GC的情况下会执行Full GC,如果仍然回收不了，则OOM:
+java.lang.OutOfMemoryError:PermGen space
+为避免Permanet Generation造成Full GC现象，可采用的方法为增大Perm Gen空间或转为使用CMS GC
+
+ex:TestCMSGC
+
+
+3,CMS GC时出现promotion faild 和concurrent mode failure
+对于采用CMS进行旧生代GC的程序而言，尤其要注意GC日志中是否有promotion faild和concurrent mode failure两种情况，当这两种情况出现时可能会触发Full GC.
+promotion faild是在进行Minor GC时，survivor space放不下，对象只能进入旧生代，而此时旧生代也放不下造成的
+concurrent mode failure是在执行CMS GC的过程中同时有对象要放入旧生代，而此时旧生代空间不组造成的
+应对措施为：
+增大survivor space、旧生代空间或调低触发并发GC的比率
+
+4,统计得到的Minor GC晋升到旧生代的平均大小大于旧生代的剩余空间
+Hotspot为了避免由于新生代对象晋升到旧生代导致旧生代空间不足的现象，在进行Minor GC时，做了一个判断，如果之前统计所得到的Minor GC
+晋升到旧生代的平均大小大于旧生代的剩余空间，那么就直接触发Full GC
