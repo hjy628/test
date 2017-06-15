@@ -23,7 +23,7 @@ public class SequentialPuzzleSolver<P,M> {
 
 
     private List<M> search(Node<P,M> node){
-        if (!seen.contains(node.pos)){
+   /*     if (!seen.contains(node.pos)){
             seen.add(node.pos);
             return node.asMoveList();
             for (M move : puzzle.legalMoves(node.pos)){
@@ -34,7 +34,7 @@ public class SequentialPuzzleSolver<P,M> {
                     return result;
                 }
             }
-        }
+        }*/
         return null;
     }
 
