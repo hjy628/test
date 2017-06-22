@@ -6,6 +6,9 @@
       <module fileurl="file://$PROJECT_DIR$/ProxyAfter/ProxyAfter.iml" filepath="$PROJECT_DIR$/ProxyAfter/ProxyAfter.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringAOP/SpringAOP.iml" filepath="$PROJECT_DIR$/SpringAOP/SpringAOP.iml" />
       <module fileurl="file://$PROJECT_DIR$/concurrency/concurrency.iml" filepath="$PROJECT_DIR$/concurrency/concurrency.iml" />
+      <module fileurl="file://$PROJECT_DIR$/effective-java/effective-java.iml" filepath="$PROJECT_DIR$/effective-java/effective-java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/java8-stream/java8-stream.iml" filepath="$PROJECT_DIR$/java8-stream/java8-stream.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis-test/mybatis-test.iml" filepath="$PROJECT_DIR$/mybatis-test/mybatis-test.iml" />
       <module fileurl="file://$PROJECT_DIR$/netty-test/netty-test.iml" filepath="$PROJECT_DIR$/netty-test/netty-test.iml" />
       <module fileurl="file://$PROJECT_DIR$/test.iml" filepath="$PROJECT_DIR$/test.iml" />
     </modules>
