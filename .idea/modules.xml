@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/mybatis-test/mybatis-test.iml" filepath="$PROJECT_DIR$/mybatis-test/mybatis-test.iml" />
       <module fileurl="file://$PROJECT_DIR$/netty-test/netty-test.iml" filepath="$PROJECT_DIR$/netty-test/netty-test.iml" />
       <module fileurl="file://$PROJECT_DIR$/test.iml" filepath="$PROJECT_DIR$/test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/thread-practice/thread-prcatice.iml" filepath="$PROJECT_DIR$/thread-practice/thread-prcatice.iml" />
     </modules>
   </component>
 </project>
