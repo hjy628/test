@@ -12,7 +12,7 @@ public class EventStorage {
     private List<Date> storage;
     public EventStorage(){
         maxSize = 10;
-        storage = new LinkedList<>();
+        storage = new LinkedList<Date>();
     }
     public synchronized void set(){
         while (storage.size()==maxSize){

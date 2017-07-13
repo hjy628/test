@@ -17,7 +17,7 @@ public class Main4_5 {
         UserValidator dbValidator=new UserValidator("DataBase");
         TaskValidator ldapTask = new TaskValidator(ldapValidator,username,password);
         TaskValidator dbTask = new TaskValidator(dbValidator,username,password);
-        List<TaskValidator> taskList = new ArrayList<>();
+        List<TaskValidator> taskList = new ArrayList<TaskValidator>();
         taskList.add(ldapTask);
         taskList.add(dbTask);
         ExecutorService executor = (ExecutorService)Executors.newCachedThreadPool();
