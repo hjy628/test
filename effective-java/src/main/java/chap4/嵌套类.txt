@@ -1,0 +1,3 @@
+嵌套类(nested class) 是指被定义在另一个类的内部的类。嵌套类存在的目的应该只是为它的外围类(enclosing class)提供服务。
+如果嵌套类将来可能会用于其他的某个环境中，他就应该是顶层类(top-level class)。
+嵌套类有四种：静态成员类(static member class)、非静态成员类(nonstatic member class)、匿名类(anonymous class)和局部类(local class)。
