@@ -15,11 +15,12 @@ public class PSGCDirectOldDemo {
         String pid = name.split("@")[0];
         System.out.println("Pid is:" + pid);
 
-        TimeUnit.SECONDS.sleep(4);
+        TimeUnit.SECONDS.sleep(10);
 
         byte[] bytes=new byte[1024*1024*2];
         byte[] bytes2=new byte[1024*1024*2];
         byte[] bytes3=new byte[1024*1024*2];
+        Thread.sleep(3000);
         System.out.println("ready to direct allocate to old");
         Thread.sleep(3000);
         byte[] bytes4 = new byte[1024*1024*4];
