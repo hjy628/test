@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>effective-java</module>
+        <module>jvm-g1</module>
     </modules>
 
     <dependencies>
@@ -25,6 +26,11 @@
             <version>4.12</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>22.0</version>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
