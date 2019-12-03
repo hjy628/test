@@ -1,4 +1,4 @@
-package cho2.c2_1;
+package chap4;
 
 import java.io.BufferedReader;
 import java.io.IOException;

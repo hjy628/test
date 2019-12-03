@@ -12,7 +12,7 @@ public class CodeCounter {
 
 
     public static void main(String[] args) {
-        File f = new File("/home/hjy/IdeaProjects/IDEA/test/src/concurrent/ch01");
+        File f = new File("/home/hjy/IdeaProjects/IDEA/test/src/main/java/chap1");
         File[] codeFiles = f.listFiles();
         for (File ff:codeFiles){
             if (ff.getName().matches(".*\\.java$")){

@@ -8,6 +8,7 @@
       <module fileurl="file://$PROJECT_DIR$/concurrency/concurrency.iml" filepath="$PROJECT_DIR$/concurrency/concurrency.iml" />
       <module fileurl="file://$PROJECT_DIR$/effective-java/effective-java.iml" filepath="$PROJECT_DIR$/effective-java/effective-java.iml" />
       <module fileurl="file://$PROJECT_DIR$/java8-stream/java8-stream.iml" filepath="$PROJECT_DIR$/java8-stream/java8-stream.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jvm-g1/jvm-g1.iml" filepath="$PROJECT_DIR$/jvm-g1/jvm-g1.iml" />
       <module fileurl="file://$PROJECT_DIR$/mybatis-test/mybatis-test.iml" filepath="$PROJECT_DIR$/mybatis-test/mybatis-test.iml" />
       <module fileurl="file://$PROJECT_DIR$/netty-test/netty-test.iml" filepath="$PROJECT_DIR$/netty-test/netty-test.iml" />
       <module fileurl="file://$PROJECT_DIR$/test.iml" filepath="$PROJECT_DIR$/test.iml" />
